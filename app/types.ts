@@ -8,3 +8,8 @@ export interface Product {
   name: string;
   scans: ScanEvent[];
 }
+
+export interface ProductEntry {
+  barcode: string;
+  name: string;
+}

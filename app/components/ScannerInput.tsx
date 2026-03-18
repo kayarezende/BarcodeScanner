@@ -30,7 +30,8 @@ export function ScannerInput({ onScan }: ScannerInputProps) {
       placeholder="Scan or type a barcode..."
       onKeyDown={handleKeyDown}
       onBlur={() => setTimeout(() => {
-        if (document.activeElement?.tagName !== 'INPUT' || document.activeElement === inputRef.current) {
+        const active = document.activeElement;
+        if (!active || active === document.body || active === inputRef.current) {
           inputRef.current?.focus();
         }
       }, 100)}
